@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breach Analysis Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #020617;
+            color: white;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid white;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<h1>🔐 Breach Analysis Dashboard</h1>
+<p>This system analyzes credential exposure using structured breach datasets.</p>
+
+<h2>📊 Breach Distribution Graph</h2>
+<canvas id="breachChart" width="400" height="200"></canvas>
+
+<ul>
+{% for key, value in breach_count.items() %}
+    <li>{{ key }} → {{ value }} times</li>
+{% endfor %}
+</ul>
+
+<h2>📋 Scan History Logs</h2>
+<table>
+<tr>
+    <th>Email</th>
+    <th>Breach</th>
+</tr>
+
+{% for row in data %}
+<tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+<br>
+<form action="/clear" method="GET">
+    <button type="submit">Clear History</button>
+</form>
+<br>
+<a href="/">Go Back</a>
+
+<script>
+    const labels = {{ breach_count.keys() | list | tojson }};
+    const values = {{ breach_count.values() | list | tojson }};
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Breach Count',
+            data: values
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data
+    };
+
+    new Chart(
+        document.getElementById('breachChart'),
+        config
+    );
+</script>
+
+<p style="margin-top:20px; font-size:12px;">
+* This system uses simulated breach datasets for educational and analysis purposes.
+</p>
+
+</body>
+</html>

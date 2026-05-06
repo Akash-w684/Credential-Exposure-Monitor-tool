@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breach Intelligence System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #22c55e;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #16a34a;
+        }
+
+        a {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔐 Credential Exposure Monitor</h1>
+    <p>
+    This system simulates breach detection using structured datasets representing leaked credentials from public breach sources.
+    </p>
+    <p>Check if your email is compromised</p>
+
+    <form action="/check" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <br><br>
+        <button type="submit">Check</button>
+    </form>
+
+    <br>
+    <a href="/history">View History</a>
+
+</body>
+</html>

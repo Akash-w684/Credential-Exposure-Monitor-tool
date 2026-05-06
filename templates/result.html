@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #020617;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .safe {
+            color: #22c55e;
+        }
+
+        .danger {
+            color: #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Breach Analysis Result for {{ email }}</h2>
+
+{% if breaches and breaches[0] != "No Breach" %}
+    <h3 class="danger">⚠️ Exposure Detected in Breach Dataset:</h3>
+    <ul>
+        {% for breach in breaches %}
+            <li>{{ breach }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3 class="safe">✅ No Exposure Detected</h3>
+{% endif %}
+
+<br>
+<a href="/">Go Back</a>
+
+</body>
+</html>

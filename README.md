@@ -22,12 +22,19 @@ Project Structure
 Credential_Exposure_Monitor_tool/
 
 ├── app.py
+
 ├── breaches.csv
+
 ├── database.db
+
 ├── templates/
+
 │   ├── index.html
+
 │   ├── result.html
+
 │   └── history.html
+
 └── README.md
 
 Installation & Setup

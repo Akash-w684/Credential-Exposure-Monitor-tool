@@ -2,6 +2,7 @@
 Credential Exposure Monitor Tool
 
 Overview
+
 Credential Exposure Monitor Tool is a cybersecurity project designed to detect and monitor exposed credentials from leaked datasets. The system helps users identify whether an email or credential has appeared in known breach records.
 
 Features

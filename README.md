@@ -1,5 +1,5 @@
 
-Credential Exposure Monitor Tool
+# Credential Exposure Monitor Tool
 
 Overview
 
